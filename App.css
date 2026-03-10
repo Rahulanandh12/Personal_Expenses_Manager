@@ -1,0 +1,177 @@
+:root{
+  --bg:#f5f7fb;
+  --surface:#ffffff;
+  --muted:#6b7280;
+  --accent:#2563eb;
+  --danger:#ef4444;
+  --radius:10px;
+  --shadow: 0 6px 18px rgba(15,23,42,0.06);
+  --glass: rgba(255,255,255,0.6);
+}
+
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,var(--bg),#eef2f7);
+  color:#0f172a;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.container{
+  max-width:1100px;
+  margin:32px auto;
+  padding:0 20px;
+}
+
+.app-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:20px;
+}
+
+.app-header h1{
+  margin:0;
+  font-size:20px;
+  letter-spacing:-0.2px;
+}
+
+.card{
+  background:var(--surface);
+  padding:20px;
+  margin:18px 0;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+
+.card h2{margin:0 0 12px 0;font-size:16px}
+
+/* Form layout */
+.card form{display:block}
+.form-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:12px;
+}
+
+input, textarea, select{
+  width:100%;
+  background:linear-gradient(180deg,var(--glass),var(--surface));
+  border:1px solid #e6e9ef;
+  padding:10px 12px;
+  border-radius:8px;
+  outline:none;
+  transition:box-shadow .12s, border-color .12s;
+  font-size:14px;
+}
+
+input:focus, textarea:focus, select:focus{
+  border-color:rgba(37,99,235,0.9);
+  box-shadow:0 6px 18px rgba(37,99,235,0.08);
+}
+
+textarea{min-height:88px;resize:vertical}
+
+.actions{display:flex;gap:8px;align-items:center;margin-top:12px}
+
+button{
+  background:var(--accent);
+  color:#fff;
+  border:0;padding:10px 14px;border-radius:8px;cursor:pointer;font-weight:600;
+}
+
+button[disabled]{opacity:.5;cursor:not-allowed}
+
+button.delete{
+  background:var(--danger);
+}
+
+.error{color:var(--danger);font-size:13px;margin-top:6px}
+
+/* Table */
+table{width:100%;border-collapse:collapse;font-size:14px}
+thead th{text-align:left;padding:12px 10px;color:var(--muted);font-weight:600}
+tbody td{padding:12px 10px;border-top:1px solid #f0f2f5}
+tbody tr:nth-child(even){background:#fbfdff}
+
+.table-amount{font-weight:700;color:#0b5cff}
+
+/* Responsive */
+@media (max-width:900px){
+  .form-grid{grid-template-columns:1fr}
+  .app-header{flex-direction:column;align-items:flex-start;gap:6px}
+  table, thead, tbody, th, td, tr{display:block}
+  thead{display:none}
+  tbody tr{margin-bottom:12px;border-radius:8px;padding:12px;background:var(--surface);box-shadow:var(--shadow)}
+  tbody td{display:flex;justify-content:space-between;padding:8px 12px;border-top:0}
+  tbody td::before{content:attr(data-label);color:var(--muted);font-weight:600;margin-right:10px}
+}
+
+/* small tweak for headings in table cells */
+th.small{width:80px}
+
+h1{
+    background: linear-gradient(90deg, #1e3c72, #2a5298);
+
+  color: gold;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 8px;
+}
+h2{
+color: black;
+background: linear-gradient(90deg, #6a91b6d2,  #2a5298);
+
+  border: 1px solid black;
+  padding: 8px;
+  border-radius: 6px;
+}
+button{
+   background-color: #2a5298;
+  color: #ffffff;
+  &:hover{
+   background:blue;
+  }
+}
+button.delete{
+  background-color: rgba(255, 0, 0, 0.605);
+  &:hover{
+  background-color: red;
+  }
+}
+.card{
+  background: linear-gradient(135deg, #e0e0e0c4, #ffffffc4);
+}
+thead {
+  font-size: large;
+   background: linear-gradient(90deg,  #2a5298, #2a5298);
+}
+input, textarea, select{
+  border: 1px solid black;
+  margin: 5px;
+}
+/* table{
+  border: 1px solid black;
+  border-radius: 5px;
+} */
+thead th {
+  border-bottom: 1px solid black;
+}
+table {
+  width: 100%;
+  table-layout: fixed;   
+  border-collapse: collapse;
+}
+td, th {
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+.tr th{
+ color: gold;
+
+}
